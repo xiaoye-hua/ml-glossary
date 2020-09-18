@@ -3,7 +3,7 @@ import numpy as np
 from collections import Counter
 import multiprocessing as mp
 import scipy
-import time
+
 
 # Basic ID3 Tree
 class id3_tree():
@@ -204,8 +204,7 @@ class RandomForestClassification():
             result_list.append(res)
             
         return scipy.stats.mode(np.array(result_list),axis=0).mode.tolist()[0] # Take the vote
-        
-    
+
     def random_find_feature(self,X,y):
         """
         Randomly select subset of features for each tree
