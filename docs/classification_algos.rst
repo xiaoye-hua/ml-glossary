@@ -215,7 +215,32 @@ For the code implementation, please refer to `code example <https://github.com/b
 Boosting
 ========
 
-Be the first to `contribute! <https://github.com/bfortuner/ml-cheatsheet>`__
+.. rubric:: Questions
+
+1. decision tree how to use sample weight?
+
+.. rubric:: Ensemble Methods
+
+The goal ensemble methods is to combine the predictions of several base estimators in order to improve the generalizability of the estimator [#sklearnensemble]_. These methods can be classified into two categories:
+
+1. Bagging method. This method builds several homogeneous base estimators independently and average the predictions.
+2. Boosting method. This method builds several homogeneous base estimators sequentially (a base model based on the previous one) and then combine their predictions.
+    1. Adaptive boosting (Adaboost)   --> mainly reduce bias  update the weight of the observations
+        1. predict: predict in parallel then weight sum
+        2. How to use observation weight  --> decision tree -->
+    2. Gradient boosting  -> update the value of the observation [#ensembleblog]_
+        1. predict: the summation of all the predictions
+3. Stacking method. This method builds several heterogeneous base estimators in parallel and combine them by training a meta-model to output the prediction based on these based model's predictions
+
+Roughly, bagging method will mainly focus on reducing the variance of the base estimators. While boosting and stacking mainly try to create more powerful model than their components (even if variance can also be reduced) [#ensembleblog]_.
+
+In the following section, we'll introduce Gradient Boosted Decision Tree (GBDT).
+
+Two important paramters for boosted tree:
+1. Num of estimators
+2. Learning rate (shrinkage rage)
+
+.. rubric:: Gradient Boosted Decision Tree (GBDT)
 
 Support Vector Machines
 =======================
@@ -231,6 +256,6 @@ Be the first to `contribute! <https://github.com/bfortuner/ml-cheatsheet>`__
 .. [#sklearntree] `Scikit-learn Documentations: Tree algorithms: ID3, C4.5, C5.0 and CART <https://scikit-learn.org/stable/modules/tree.html#tree-algorithms-id3-c4-5-c5-0-and-cart>`__
 .. [#sklearnensemble] `Scikit-learn Documentations: Ensemble Method <https://scikit-learn.org/stable/modules/ensemble.html#>`__
 .. [#decisiontrees] `Decision Trees <https://www.cs.cmu.edu/~bhiksha/courses/10-601/decisiontrees/>`__
-
+.. [#ensembleblog] `Ensemble methods: bagging, boosting and stacking - Towards Data Science <https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205>`__
 
 
