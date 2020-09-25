@@ -240,6 +240,17 @@ Two important paramters for boosted tree:
 1. Num of estimators
 2. Learning rate (shrinkage rage)
 
+.. rubric:: Weight Boosted Decision Tree
+
+1. Fit
+    1. estimator_weight = self.learning_rate * (
+            np.log((1. - estimator_error) / estimator_error) +
+            np.log(n_classes - 1.))
+    2. sample_weight *= np.exp(estimator_weight * incorrect *
+                                    (sample_weight > 0))
+2. Predict
+    1. Weight mean of all estimators' outputs
+
 .. rubric:: Gradient Boosted Decision Tree (GBDT)
 
 Support Vector Machines
