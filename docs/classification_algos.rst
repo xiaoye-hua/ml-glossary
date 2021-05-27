@@ -16,7 +16,8 @@ Decision Trees
 ==============
 .. rubric:: Intuitions
 
-Decision tree works by successively splitting the dataset into small segments until the target variable are the same or until the dataset can no longer be split. It's a greedy algorithm which make the best decision at the given time without concern for the global optimality [#mlinaction]_.
+Decision tree works by successively splitting the dataset into small segments until the target variable are the same or until the dataset can no longer be split. It's a greedy algorithm which make the best decision at the given time without concern for the global optimality [#mlinaction]_. It can be used both for classification and regression. During the training, in terms of classification, the majority of labels from the child nodes are selected as result; in case of regression, average of labels of the child nodes are selected as result
+
 
 The concept behind decision tree is straightforward. The following flowchart show a simple email classification system based on decision tree. If the address is "myEmployer.com", it will classify it to "Email to read when bored". Then if the email contains the word "hockey", this email will be classified as "Email from friends". Otherwise, it will be identified as "Spam: don't read". Image source [#mlinaction]_.
 
